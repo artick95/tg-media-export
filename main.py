@@ -5,9 +5,9 @@ from telethon.tl.types import InputMessagesFilterVideo
 from telethon.tl.types import InputMessagesFilterGif
 
 
-api_id= your api_id
-api_hash = 'your api_hash'
-channel_link = ['channel1','channel2']
+api_id= 5069575
+api_hash = '5edabad7783d22b37db0ec17ea382ec6'
+channel_link = ['yieldly','mylottocoin','freecryptolotto','g2_gaming','xggchat','BitoshiBSC']
 pic_down = './pic'
 gif_down = './gif'
 video_down = './video'
@@ -42,7 +42,7 @@ def getPhotoList(client,channel,InputMessagesFilterPhotos):
         index = index + 1
         if (IsChongFu(filename,history_file)):
             continue
-        print("downloadind: ",index,"/",total," : ",filename)
+        print("downloading: ",index,"/",total," : ",filename)
         download(client,photo,filename)
     print('photo is done..')
 
@@ -56,7 +56,7 @@ def getGifList(client,channel,InputMessagesFilterGif):
         index = index + 1
         if (IsChongFu(filename,history_file)):
             continue
-        print("downloadind: ",index,"/",total," : ",filename)
+        print("downloading: ",index,"/",total," : ",filename)
         download(client,gif,filename)
     print('gif is done..')
 
@@ -70,7 +70,7 @@ def getVideoList(client,channel,InputMessagesFilterVideo):
         index = index + 1
         if (IsChongFu(filename,history_file)):
             continue
-        print("downloadind: ",index,"/",total," : ",filename)
+        print("downloading: ",index,"/",total," : ",filename)
         download(client,video,filename)
     print('video is done...')
 
@@ -78,8 +78,10 @@ if __name__ == "__main__":
     client = TelegramClient('my_session',api_id=api_id,api_hash=api_hash).start()
     for channel in channel_link:
         print(channel+' is starting...')
-        getPhotoList(client,channel,InputMessagesFilterPhotos)
+        
         getGifList(client,channel,InputMessagesFilterGif)
-        getVideoList(client,channel,InputMessagesFilterVideo)
+        #getPhotoList(client,channel,InputMessagesFilterPhotos)
+        #getVideoList(client,channel,InputMessagesFilterVideo)
+        
     client.disconnect()
     print('ALL done !!')
